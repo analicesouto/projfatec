@@ -1,0 +1,14 @@
+print('Exemplo de leitura de arquivo csv')
+print('Arquivo de entrada: dados.txt')
+
+Arq = open('dados.txt', 'r')
+S = Arq.readline()
+while S != '':
+    S = S.rstrip() # elimina o \n do final da linha lida
+    print(S)
+
+    S = Arq.readline()
+Arq.close()
+
+
+print('\n\nFim do Programa')
