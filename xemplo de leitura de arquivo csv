@@ -1,0 +1,19 @@
+print('Exemplo de leitura de arquivo csv')
+print('Arquivo de entrada: dados.txt')
+
+print('    Campo1    Campo2    Campo3')
+Arq = open('dados.txt', 'r')
+S = Arq.readline()
+while S != '':
+    S = S.rstrip() # elimina o \n do final da linha lida
+    S = S.split(';')
+    Campo1 = float(S[0])
+    Campo2 = int(S[1])
+    Campo3 = float(S[2])
+    print('{:10.3f}{:10d}{:10.3f}'.format(Campo1, Campo2, Campo3))
+
+    S = Arq.readline()
+Arq.close()
+
+
+print('\n\nFim do Programa')
