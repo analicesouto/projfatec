@@ -1,0 +1,30 @@
+
+function exquatro (var lista: ENDNODO, n: INTEGER): INTEGER;
+var q,r: endNODO;
+	pos:integer;
+ begin
+cont:= 0;
+  if (lista = nil)
+   begin
+     new(lista);
+     lista^.dado:= n;
+     lista^.prox:=nil;
+     exquatro:= n;
+   end
+ else
+  begin
+    q := lista;
+    r := lista^.prox;
+    while (q^.prox <> nil) do
+   begin
+    pos:= pos + q^.dado;
+    r := q;
+    q := r^.prox;
+   end;
+ new(q);
+  r^.prox:= q;
+  q^.dado:=n;
+  q^.prox:=nil;
+ end;
+  exquatro:= pos + n;
+end;
